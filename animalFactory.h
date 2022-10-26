@@ -13,22 +13,35 @@
 #include "serpent.h"
 
 class AnimalFactory: public AbstractFactory{
+    private:
+        static Animal* tiger;
+        static Animal* wolf;
+        static Animal* lemur;
+        static Animal* kangaroo;
+        static Animal* serpent;
+
     public:
-        Animal* CreateTiger (string givenName) {
-            return new Tiger(givenName);
+        Animal* CreateTiger () {
+            return tiger->clone();
         }
-        Animal* CreateWolf (string givenName) {
-            return new Wolf(givenName);
+        Animal* CreateWolf () {
+            return wolf->clone();
         }
-        Animal* CreateLemur (string givenName) {
-            return new Lemur(givenName);
+        Animal* CreateLemur () {
+            return lemur->clone();
         }
-        Animal* CreateKangaroo (string givenName) {
-            return new Kangaroo(givenName);
+        Animal* CreateKangaroo () {
+            return kangaroo->clone();
         }
-        Animal* CreateSerpent (string givenName) {
-            return new Serpent(givenName);
+        Animal* CreateSerpent () {
+            return serpent->clone();
         }
 };
 
 #endif
+
+Animal* AnimalFactory::tiger = new Tiger();
+Animal* AnimalFactory::wolf = new Wolf();
+Animal* AnimalFactory::lemur = new Lemur();
+Animal* AnimalFactory::kangaroo = new Kangaroo();
+Animal* AnimalFactory::serpent = new Serpent();

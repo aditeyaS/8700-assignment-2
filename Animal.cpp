@@ -3,14 +3,11 @@
 
 #include "animal.h"
 
-int Animal::count = 0;
-
 Animal::Animal(string animalName, string givenName, string speak, string food) {
     this->animalName = animalName;
     this->givenName = givenName;
     this->speak = speak;
     this->food = food;
-    count++;
 }
 
 ostream& operator<<(ostream& out, const Animal& animal) {

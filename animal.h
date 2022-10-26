@@ -14,11 +14,28 @@ class Animal {
         string givenName;
         string speak;
         string food;
-        static int count;
 
     public:
+        // constructers
         Animal(string animalName, string givenName, string speak, string food);
-        static int getCount() {return count;}
+
+        // destructor
+        ~Animal() {}
+
+        virtual Animal* clone() = 0;
+
+        // getters or accessors
+        string getAnimalName() {return animalName;}
+        string getGivenName() {return givenName;}
+        string getSpeak() {return speak;}
+        string getFood() {return food;}
+
+        // setters or modifiers
+        void setAnimalName(string animalName) {this->animalName = animalName;}
+        void setGivenName(string givenName) {this->givenName = givenName;}
+        void setSpeak(string speak) {this->speak = speak;}
+        void setFood(string food) {this->food = food;}
+
         friend ostream& operator<<(ostream &out, const Animal &animal);
 };
 

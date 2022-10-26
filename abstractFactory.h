@@ -11,11 +11,11 @@ using namespace std;
 
 class AbstractFactory {
     public:
-        virtual Animal* CreateTiger(string givenName) = 0;
-        virtual Animal* CreateWolf(string givenName) = 0;
-        virtual Animal* CreateLemur(string givenName) = 0;
-        virtual Animal* CreateKangaroo(string givenName) = 0;
-        virtual Animal* CreateSerpent(string givenName) = 0;
+        virtual Animal* CreateTiger() = 0;
+        virtual Animal* CreateWolf() = 0;
+        virtual Animal* CreateLemur() = 0;
+        virtual Animal* CreateKangaroo() = 0;
+        virtual Animal* CreateSerpent() = 0;
 };
 
 #endif

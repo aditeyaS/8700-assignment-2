@@ -10,15 +10,12 @@
 using namespace std;
 
 class Kangaroo : public Animal {
-    private:
-        static int count;
     public:
-        Kangaroo(string givenName) : Animal("kangaroo", givenName, "click", "carrots"){
-            count++;
+        Kangaroo() : Animal("kangaroo", "", "click", "carrots"){}
+
+        Animal* clone() {
+            return new Kangaroo(*this);
         }
-        static int getCount() {return count;}
 };
 
 #endif
-
-int Kangaroo::count = 0;
