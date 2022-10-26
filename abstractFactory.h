@@ -6,11 +6,14 @@
 
 #include "animal.h"
 
-#include <string>
-using namespace std;
-
 class AbstractFactory {
     public:
+        // constructors
+        AbstractFactory(){}
+
+        // destructor
+        ~AbstractFactory(){}
+
         virtual Animal* CreateTiger() = 0;
         virtual Animal* CreateWolf() = 0;
         virtual Animal* CreateLemur() = 0;

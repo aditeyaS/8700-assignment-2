@@ -15,6 +15,7 @@ Zoo* Zoo::instance;
 
 void Zoo::read(vector<string> input) {
     if (input.size()%2 != 0) {
+        // the no. of input should even
         cout << "Invalid input!" << endl;
         readSuccess = false;
         return;
@@ -36,42 +37,37 @@ void Zoo::read(vector<string> input) {
 
         if(quantity <= 0) {
             continue;
-        } 
+        }
 
         if(input.at(iterator) == "tiger") {
             while(quantity--) {
                 Animal* tiger = animalFactory->CreateTiger();
                 tiger->setGivenName(nameFactory.getName(givenNameIndex++));
                 animalList.push_back(tiger);
-                tigerCount++;
             }
         } else if(input.at(iterator) == "wolf") {
             while(quantity--) {
                 Animal* wolf = animalFactory->CreateWolf();
                 wolf->setGivenName(nameFactory.getName(givenNameIndex++));
                 animalList.push_back(wolf);
-                wolfCount++;
             }
         } else if(input.at(iterator) == "lemur") {
             while(quantity--) {
                 Animal* lemur = animalFactory->CreateLemur();
                 lemur->setGivenName(nameFactory.getName(givenNameIndex++));
                 animalList.push_back(lemur);
-                lemurCount++;
             }
         } else if(input.at(iterator) == "kangaroo") {
             while(quantity--) {
                 Animal* kangaroo = animalFactory->CreateKangaroo();
                 kangaroo->setGivenName(nameFactory.getName(givenNameIndex++));
                 animalList.push_back(kangaroo);
-                kangarooCount++;
             }
         } else if(input.at(iterator) == "serpent") {
             while(quantity--) {
                 Animal* serpent = animalFactory->CreateSerpent();
                 serpent->setGivenName(nameFactory.getName(givenNameIndex++));
                 animalList.push_back(serpent);
-                serpentCount++;
             }
         } else {
             cout << "Invalid animal name!" << endl;
@@ -86,11 +82,11 @@ void Zoo::display() {
     if (!readSuccess) return;
     cout << "Zoo \"Wild Things\" is home to the following animals:" <<endl;
     cout << "---------------------------------" <<endl;
-    cout << "There are total " << animalList.size() << " animals in the Zoo" << endl;
-    cout << "There are " << tigerCount << " tigers, " <<
-        wolfCount << " wolves, " << kangarooCount <<
-        " kangaroo, " << lemurCount << " lemur and " <<
-        serpentCount << " serpents." << endl;
+    cout << "There are total " << getCount() << " animals in the Zoo" << endl;
+    cout << "There are " << Tiger::getCount() << " tigers, " <<
+        Wolf::getCount() << " wolves, " << Kangaroo::getCount() <<
+        " kangaroo, " << Lemur::getCount() << " lemur and " <<
+        Serpent::getCount() << " serpents." << endl;
     for (int i=0; i<animalList.size(); i++) {
         cout << *animalList.at(i) << endl;
     }

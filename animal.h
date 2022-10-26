@@ -17,11 +17,12 @@ class Animal {
 
     public:
         // constructers
-        Animal(string animalName, string givenName, string speak, string food);
+        Animal(string animalName, string speak, string food);
 
         // destructor
-        ~Animal() {}
+        ~Animal(){}
 
+        // clone (for cloning animals)
         virtual Animal* clone() = 0;
 
         // getters or accessors

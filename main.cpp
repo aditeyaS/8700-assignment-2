@@ -8,7 +8,7 @@
 #include <vector>
 using namespace std;
 
-int main() { 
+int main() {
     vector<string> input;
     while(!cin.fail()) {
         string i;

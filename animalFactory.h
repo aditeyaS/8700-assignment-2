@@ -21,6 +21,18 @@ class AnimalFactory: public AbstractFactory{
         static Animal* serpent;
 
     public:
+        // constructors
+        AnimalFactory() {}
+
+        //destructor
+        ~AnimalFactory () {
+            delete tiger;
+            delete wolf;
+            delete lemur;
+            delete kangaroo;
+            delete serpent;
+        }
+
         Animal* CreateTiger () {
             return tiger->clone();
         }

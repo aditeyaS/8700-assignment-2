@@ -12,12 +12,6 @@ using namespace std;
 
 class Zoo {
     private:
-        int tigerCount = 0;
-        int wolfCount = 0;
-        int lemurCount = 0;
-        int kangarooCount = 0;
-        int serpentCount = 0;
-
         vector<Animal*> animalList;
         bool readSuccess;
 
@@ -25,7 +19,13 @@ class Zoo {
         Zoo(){}
 
     public:
+        // destructor
+        ~Zoo() {animalList.clear();}
+
+        // deleting copy and =
         Zoo(const Zoo&) = delete;
+        void operator=(Zoo const&) = delete;
+
         static Zoo* getInstance() {
             if(!instance) instance = new Zoo;
             return instance;
@@ -34,7 +34,7 @@ class Zoo {
         void read(vector<string> input);
         void display();
 
-        ~Zoo() {animalList.clear();}
+        int getCount() {return animalList.size();}
 };
 
 #endif

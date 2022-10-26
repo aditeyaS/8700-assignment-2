@@ -6,16 +6,26 @@
 
 #include "animal.h"
 
-#include <string>
-using namespace std;
-
 class Wolf : public Animal {
+    private:
+        static int count;
+
     public:
-        Wolf() : Animal("wolf", "", "growl", "chicken") {}
+        // constructors
+        Wolf() : Animal("wolf", "growl", "chicken") {}
+
+        // destructor
+        ~Wolf() {count--;}
 
         Animal* clone() {
+            count++;
             return new Wolf(*this);
         }
+
+        // getters or accessors
+        static int getCount(){return count;}
 };
 
 #endif
+
+int Wolf::count = 0;

@@ -3,9 +3,9 @@
 
 #include "animal.h"
 
-Animal::Animal(string animalName, string givenName, string speak, string food) {
+Animal::Animal(string animalName, string speak, string food) {
     this->animalName = animalName;
-    this->givenName = givenName;
+    this->givenName = "";
     this->speak = speak;
     this->food = food;
 }

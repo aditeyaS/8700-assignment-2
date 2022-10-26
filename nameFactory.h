@@ -23,6 +23,7 @@ class NameFactory {
         };
 
     public:
+        // getters or accessors
         string getName(int index) {return nameList[index];}
 };
 
